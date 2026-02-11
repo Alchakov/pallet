@@ -1,0 +1,187 @@
+.products-list {
+  @media #{$xsmall-down} {
+    margin-left: -14PX;
+    margin-right: -14PX;
+  }
+
+  li {
+    margin-bottom: 24px;
+  }
+
+  >li {
+    @media #{$xsmall-down} {
+      margin: 30PX 0 0;
+      padding-left: 2PX;
+      padding-right: 2PX;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.product-item {
+  position: relative;
+  height: 100%;
+
+  &__get-wholesale-price {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  &__wrapper {
+    height: 100%;
+    padding-top: 12%;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 0 25px;
+    border: 1px solid #e2e2e2;
+    transition: all 0.23s ease;
+
+    &:hover {
+      box-shadow: 0px 12px 14px 1px rgba(76, 117, 137, 0.27);
+    }
+  }
+
+  &__header {
+    margin-top: -12%;
+    margin-bottom: 20px;
+    padding: 0 25px;
+
+    @media #{$medium-down} {
+      padding: 0 10PX;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: $main;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+
+    .product-stickers {
+      position: absolute;
+      bottom: 0;
+      right: -25px;
+      text-align: right;
+      z-index: 112;
+
+      @media #{$medium-down} {
+        right: -10PX;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 0.833em;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__attributes {
+    margin-bottom: 24px;
+    padding: 0 25px;
+
+    @media #{$medium-down} {
+      padding: 0 10PX;
+    }
+
+    .product-attributes {
+      &__item {
+        margin-bottom: 13px;
+
+        >* {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 25px;
+    margin-top: auto;
+
+    @media #{$medium-down} {
+      padding: 0 10PX;
+    }
+
+    .product-stock {
+      margin-bottom: 24px;
+
+      @media #{$xsmall-down} {
+        margin-bottom: 20px;
+      }
+    }
+
+    .product-actions {
+      @media #{$xsmall-down} {
+        margin-top: auto;
+      }
+    }
+
+    .product-price {
+      @media #{$medium-down} {
+        &__label {
+          display: block;
+        }
+
+        &__amount {
+          .amount {
+            margin-left: 0;
+          }
+
+          del {
+            top: 100%;
+          }
+        }
+      }
+    }
+
+    .product-buy {
+      .btn {
+        width: 125px;
+        height: 38px;
+        padding: 0;
+
+        @media #{$xsmall-down} {
+          width: 38px;
+          padding: 0;
+        }
+
+        &__text {
+          @media #{$xsmall-down} {
+            font-size: 0;
+          }
+
+          &:before {
+            @extend .icomoon;
+            content: "\e90a";
+            font-size: 22px;
+
+            @media #{$small-up} {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

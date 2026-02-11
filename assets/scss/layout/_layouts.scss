@@ -1,0 +1,23 @@
+.main-layout {
+  padding-top: 42px;
+  padding-bottom: 100px;
+
+  @media #{$small-down} {
+    padding-top: 36px;
+    padding-bottom: 20px;
+  }
+}
+
+.product_cat-layout {
+  padding-bottom: 42px;
+}
+
+.kontakty-layout {
+  padding-bottom: 30px;
+}
+
+.product_cat-layout {
+  ~ .container .b-contacts {
+    margin-top: 71px;
+  }
+}

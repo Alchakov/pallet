@@ -1,0 +1,26 @@
+.tab-content {
+  display: inline-block;
+  width: 100%;
+
+  > .tab-pane {
+    display: block !important;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+    &.fade {
+      opacity: 0;
+      transition: opacity .23s linear;
+    }
+
+    &.fade.show {
+      opacity: 1;
+    }
+  }
+
+  > .active {
+    display: block;
+    height: auto;
+    visibility: visible;
+  }
+}

@@ -1,0 +1,110 @@
+@mixin size($width,$height)
+  width: $width
+  height: $height
+@mixin square($width)
+  width: $width
+  height: $width
+%justify
+  font-size: 0
+  text-align: justify
+  text-justify: newspaper
+  li
+    display: inline-block
+    vertical-align: middle
+  &:after
+    height: 1px
+    margin-top: -1px
+    content: ""
+    display: inline-block
+    width: 100%
+%vertical
+  font-size: 0
+  text-align: center
+  .help
+    display: inline-block
+    vertical-align: middle
+  &:after
+    content: ""
+    display: inline-block
+    vertical-align: middle
+    @include size(.1%,100%)
+    margin-left: -.1%
+@mixin placeholder($amount1, $amount2)
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder
+    color: $amount1
+  input::-moz-placeholder,
+  textarea::-moz-placeholder
+    color: $amount1
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder
+    color: $amount1
+  input::placeholder,
+  textarea::placeholder
+    color: $amount1
+  input:focus::-webkit-input-placeholder,
+  textarea:focus::-webkit-input-placeholder
+    color: $amount2
+  input:focus::-moz-placeholder,
+  textarea:focus::-moz-placeholder
+    color: $amount2
+  input:focus:-ms-input-placeholder,
+  textarea:focus:-ms-input-placeholder
+    color: $amount2
+  input:focus::placeholder,
+  textarea:focus::placeholder
+    color: $amount2
+
+//@mixin transition($amount)
+//  -moz-transition: $amount
+//  -webkit-transition: $amount
+//  -o-transition: $amount
+//  -ms-transition: $amount
+//  transition: $amount
+//@mixin background-size($amount)
+//  -moz-background-size: $amount
+//  -o-background-size: $amount
+//  -ms-background-size: $amount
+//  -webkit-background-size: $amount
+//  background-size: $amount
+//@mixin border-radius($amount)
+//  -moz-border-radius: $amount
+//  -webkit-border-radius: $amount
+//  border-radius: $amount
+//@mixin box-shadow($amount)
+//  -moz-box-shadow: $amount
+//  -webkit-box-shadow: $amount
+//  box-shadow: $amount
+//@mixin transform($amount)
+//  -moz-transform: $amount
+//  -webkit-transform: $amount
+//  -o-transform: $amount
+//  -ms-transform: $amount
+//  transform: $amount
+//@mixin transform-origin($amount)
+//  -webkit-transform-origin: $amount
+//  -moz-transform-origin: $amount
+//  transform-origin: $amount
+//@mixin background-clip($amount)
+//  -moz-background-clip: $amount
+//  -webkit-background-clip: $amount
+//  background-clip: $amount
+//@mixin transform-style($amount)
+//  -moz-transform-style: $amount
+//  -webkit-transform-style: $amount
+//  -o-transform-style: $amount
+//  -ms-transform-style: $amount
+//  transform-style: $amount
+
+
+
+
+
+
+
+
+
+
+
+
+

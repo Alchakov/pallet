@@ -1,0 +1,62 @@
+.node {
+  &--post {
+    margin-bottom: 50px;
+  }
+
+  &__header {
+    margin: -0.125em 0 0;
+    margin-bottom: 36px;
+
+    h1 {
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    &-info {
+      margin: 2.5rem 0 0;
+    }
+
+    &-time {
+      display: inline-block;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.1;
+    }
+
+    &-comment {
+      display: inline-block;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.1;
+      margin-left: 30px;
+
+      span {
+        margin-right: 5px;
+      }
+
+      a {
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 50px;
+
+    &-share {
+      font-size: 18px;
+      background: #eee;
+      padding: 1.389em;
+    }
+  }
+
+  .content {
+    > * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

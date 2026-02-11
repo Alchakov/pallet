@@ -1,0 +1,21 @@
+.front-form {
+  background-image: url("../images/front-form-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  padding: 78px 0 95px;
+
+  @media #{$small-down} {
+    background: #e4e6e9;
+    text-align: center;
+    padding: 70px 0;
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 1.5;
+    margin: em(33px, 24px) 0;
+    color: #5d5e5f;
+    text-transform: uppercase;
+  }
+}

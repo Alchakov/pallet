@@ -1,0 +1,25 @@
+.front-map {
+  position: relative;
+
+  h2 {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: -568PX;
+    margin-bottom: 0;
+    line-height: 1;
+    color: #fff;
+    background: #3a4349;
+    background: rgba(58, 67, 73, 0.5);
+    z-index: 111;
+    white-space: nowrap;
+
+    @media #{$large-down} {
+      top: 0;
+      left: 0;
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+// required styles
+
+.slinky-menu {
+  overflow: hidden;
+  transform: translateZ(0);
+
+  > ul {
+    left: 0;
+    position: relative;
+    transform: translateZ(0);
+  }
+
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  a {
+    align-items: center;
+    display: flex;
+
+    span {
+      flex: 1;
+      line-height: 1.4;
+    }
+  }
+
+  li ul {
+    display: none;
+    left: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .header {
+    display: flex;
+
+    .title {
+      flex: 1;
+      line-height: 1.4;
+      margin: 0;
+      order: 1;
+    }
+  }
+}
+
+// default theme
+
+.slinky-theme {
+  .title {
+    color: #333;
+    padding: 1em;
+  }
+
+  li {
+    line-height: 1;
+  }
+
+  a:not(.back) {
+    > span {
+      display: block;
+      padding: 10PX 0;
+      border-bottom: 1PX solid #d8d8d8;
+    }
+
+    display: block;
+    text-decoration: none;
+    color: $main;
+    font-size: 16PX;
+    line-height: 1.3;
+    font-weight: 600;
+    padding: 0 15PX;
+  }
+
+  .cat-parent-highlight {
+    background: #aed6de;
+  }
+
+  .is-active {
+    > a {
+      color: $cyan;
+
+      > span {
+        &:after {
+          color: $cyan;
+        }
+      }
+    }
+  }
+
+  .next {
+    > span {
+      position: relative;
+      padding-right: 20PX;
+
+      &:after {
+        @extend .icomoon;
+
+        content: "\e91e";
+        font-size: 14PX;
+        position: absolute;
+        right: 0;
+
+        @include center(y);
+
+        color: $blue;
+      }
+    }
+  }
+
+  .back {
+    position: relative;
+    display: block;
+    height: 30PX;
+    width: 100%;
+    overflow: hidden;
+
+     &:after {
+      @extend .icomoon;
+
+      content: "\e910";
+      position: absolute;
+    @include center
+      font-size: 18PX;
+      color: $blue;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.front-videos {
+  background-image: url("../images/header-tall-wood.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 100px 0;
+
+  &__text {
+    font-size: 22px;
+    color: #575959;
+    border-left: 1px solid $cyan;
+    padding: 0.5em 0 0.5em 1.136em;
+    margin-bottom: 2em;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+  }
+
+  .videos-list {
+    li {
+      .video-preview {
+        width: 100%;
+        max-width: 365px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .front-btn {
+    margin-top: 40px;
+  }
+}

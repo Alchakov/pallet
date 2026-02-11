@@ -1,0 +1,57 @@
+.toggle-btn {
+  display: inline-block;
+
+  &__inner {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    .toggle-btn--arrow & {
+      padding-right: 15px;
+
+      &:after {
+        @extend .icomoon;
+
+        content: "\e920";
+        font-size: 5px;
+        position: absolute;
+        right: 0;
+
+        @include center(y);
+      }
+    }
+  }
+
+  &__text {
+    .toggle-btn--changeable & {
+      position: relative;
+      display: inline-block;
+      transition: transform 0.2s;
+
+      &:before {
+        content: attr(data-active);
+        position: absolute;
+        top: 100%;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  &.toggle-btn--active {
+    &.toggle-btn--arrow {
+      .toggle-btn__inner:after {
+        content: "\e921";
+      }
+    }
+
+    &.toggle-btn--changeable {
+      .toggle-btn__text {
+        transform: translateY(-100%);
+      }
+    }
+  }
+}
+
+.toggle-info {
+  display: none;
+}

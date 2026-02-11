@@ -1,0 +1,22 @@
+.discount-preview {
+  position: relative;
+  padding: 25px;
+  background: #f9fcfd;
+  height: 100%;
+
+  &__caption {
+    color: $blue;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"rules": {
+	    "author": "required",
+		"email": {
+	      "required": true,
+	      "email": true
+	  	},   
+		"comment": "required",		
+	    "wp-comment-cookies-consent": "required"
+	},
+	"messages": {
+	    "author": "Заполните поле",
+		"email": {
+	        "required": "Заполните поле",
+	        "email": "Некорректный e-mail"
+	    },
+		"comment": "Напишите комментарий",		
+	    "wp-comment-cookies-consent": "Примите соглашение"
+		
+	},
+	"success": "Ваш комментарий отправлен.<br> Он будет опубликован после проверки."
+}

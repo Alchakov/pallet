@@ -1,0 +1,59 @@
+.breadcrumbs {
+  padding: 14px 0;
+  color: #acacac;
+
+  ul {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    text-align: left;
+
+    @media #{$small-down} {
+      display: block;
+      white-space: nowrap;
+      overflow: auto;
+      padding-top: 10PX;
+      padding-bottom: 10PX;
+    }
+
+    > li {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 8px 0 0;
+
+      > a, .current {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 14px;
+        line-height: 1;
+
+        &:hover, &:focus {
+          html.mobile-device & {
+            text-decoration: none;
+            color: $blue;
+          }
+        }
+      }
+
+      &:after {
+        display: inline-block;
+        vertical-align: bottom;
+        content: "/";
+        margin-left: 8px;
+        line-height: 1;
+        font-size: 15px;
+      }
+
+      &:last-child {
+        padding: 0;
+        margin: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}

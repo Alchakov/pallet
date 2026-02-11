@@ -1,0 +1,148 @@
+.product-attributes {
+  font-size: 0;
+
+  &__item {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > * {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+  }
+
+  &__label {
+    width: 60%;
+    position: relative;
+
+    span {
+      position: relative;
+      background: #fff;
+      padding-right: 5px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+      width: 100%;
+      border-bottom: 2px dotted #c4c4c4;
+    }
+  }
+
+  &__value {
+    width: 40%;
+    padding-left: 5px;
+  }
+}
+
+.product-stock {
+  position: relative;
+  color: #686868;
+  font-size: 16px;
+  padding-left: 20PX;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -3PX;
+
+    @include square(6PX);
+
+    background: green;
+    border-radius: 100%;
+  }
+
+  &--out-of-stock {
+    &:before {
+      background: red;
+    }
+  }
+
+  &--available-on-backorder {
+    &:before {
+      background: $blue;
+    }
+  }
+}
+
+.product-actions {
+  font-size: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-buy {
+  .btn {
+    width: 100%;
+    min-width: 1px;
+  }
+}
+
+.product-price {
+  font-size: 0;
+
+  > * {
+    display: inline-block;
+  }
+
+  &__label {
+    color: #686868;
+    font-size: 16px;
+  }
+
+  &__amount {
+    position: relative;
+
+    .amount {
+      color: $main;
+      font-weight: bold;
+      font-size: 23px;
+      margin-left: 8px;
+    }
+
+    del {
+      position: absolute;
+      top: -15px;
+      left: 0;
+      text-decoration: none;
+
+      .amount {
+        margin-left: 4px;
+        position: relative;
+        color: #686868;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1;
+        padding: 0 0 0 4px;
+        background: linear-gradient(to top left, #fff calc(50% - 1px), #e73a1b, #fff calc(50% + 1px));
+
+        * {
+          display: none;
+        }
+      }
+    }
+
+    ins {
+      text-decoration: none;
+    }
+  }
+}
+
+.product-stickers {
+  li {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

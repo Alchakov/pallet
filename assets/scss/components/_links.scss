@@ -1,0 +1,129 @@
+a.zoom-icon,
+.wp-block-gallery .blocks-gallery-item a {
+  display: block;
+  position: relative;
+  border: 0 !important;
+  text-decoration: none;
+  background: #000;
+  z-index: 110;
+
+  img {
+    position: relative;
+    opacity: 1;
+    z-index: 111;
+    transition: all 0.23s ease;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    width: 86px;
+    height: 86px;
+    margin: -43px 0 0 -43px;
+    background: #fff;
+    border-radius: 100%;
+    z-index: 112;
+  }
+
+  &:after {
+    content: "\e913";
+
+    @extend .icomoon;
+
+    position: absolute;
+    top: 54%;
+    left: 0;
+    right: 0;
+    margin-top: -17px;
+    text-align: center;
+    color: $main;
+    font-size: 34px;
+    z-index: 114;
+  }
+
+  &:before,
+  &:after {
+    opacity: 0;
+    transition: all 0.23s ease-in-out;
+  }
+
+  &:hover {
+    img {
+      opacity: 0.7;
+    }
+
+    &:before,
+    &:after {
+      top: 50%;
+      opacity: 1;
+    }
+  }
+}
+
+
+.link-inverse {
+  text-decoration: underline !important;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.link-back {
+  a {
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+    color: $main;
+    text-decoration: none;
+    padding-left: 2em;
+
+    &:before {
+      @extend .icomoon;
+
+      content: "\e910";
+      position: absolute;
+
+      @include center(y);
+
+      left: 0;
+      color: $blue;
+    }
+
+    &:hover, &:focus {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+}
+
+.link-arrow {
+  position: relative;
+  padding-right: 1.167em;
+
+  &:after {
+    position: absolute;
+    right: 0;
+
+    @include center(y);
+
+    @extend .icomoon;
+
+    content: "\e911";
+    font-size: 0.722em;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .btn & {
+    padding-right: 1.563em;
+
+    &:after {
+      font-size: 0.875em;
+    }
+  }
+}

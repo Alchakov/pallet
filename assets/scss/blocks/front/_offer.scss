@@ -1,0 +1,67 @@
+.front-offer {
+  background-image: url("../images/front-offer-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  padding: 40px 0 65px;
+
+  &__type {
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #87979f;
+    margin-bottom: em(31px, 36px);
+  }
+
+  &__title {
+    font-size: 25px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin-top: 27px;
+
+    li {
+      position: relative;
+      padding-left: 46px;
+      min-height: 30px;
+      margin-bottom: 13px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-img {
+      position: absolute;
+      top: -5px;
+      left: 0;
+      display: block;
+      width: 34px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+  }
+
+  &__form {
+    margin-top: 25px;
+
+    &-title {
+      font-size: 24px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: em(32px, 24px);
+    }
+
+    .form {
+      .btn {
+        width: 100%;
+        padding: 0 5px;
+        min-width: 1px;
+      }
+    }
+  }
+}

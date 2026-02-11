@@ -1,0 +1,35 @@
+.buy-card {
+  margin: 50PX 0;
+
+  @media #{$small-down} {
+    margin-top: 25PX;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+
+    @media #{$small-down} {
+      margin: 20PX 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 20px;
+
+    &-label {
+      width: 50%;
+
+      span {
+        font-size: 14px;
+      }
+
+      @media #{$small-down} {
+        width: 200PX;
+      }
+    }
+  }
+}

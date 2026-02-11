@@ -1,0 +1,82 @@
+.c-icon {  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @include square(44px);
+  border-radius: 50%;
+  background: #f1f8fa;
+  padding: 5px;
+
+  span {
+    font-size: 19px;
+    color: #b6d5e0;
+  }
+}
+
+.c-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include square(34px);
+
+  border-radius: 50%;
+  background: $cyan;
+  overflow: hidden;
+  transition: background .2s ease;
+
+  &--vk {
+    background: #4f76a1;
+  }
+
+  &--facebook {
+    background: #3c5a96;
+  }
+
+  &--instagram {
+    background: #fed373;
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+  }
+
+  &--odnoklassniki {
+    background: #ec8224;
+  }
+
+  &--youtube {
+    background: #cb2327;
+  }
+
+  &--telegram {
+    background: #0088cc;
+  }
+
+  &--whatsapp {
+    background: #5ed36d;
+  }
+
+  &--viber {
+    background: #a173c4;
+  }
+
+  > span {
+    color: #fff;
+    font-size: 20px;
+
+    &.icon-telegram {
+      text-indent: -3px;
+    }
+
+    &.icon-envelope  {
+      text-indent: -1px;
+    }
+
+    &.icon-whatsapp {
+      text-indent: 1px;
+    }
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+    background: $main;
+  }
+}

@@ -1,0 +1,92 @@
+.front-reviews {
+  background: #fff;
+
+  @media #{$large-down} {
+    padding: 0 $gutter;
+  }
+
+  &--strict {
+    margin-top: -57px;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  &__row {
+    margin-top: 100px;
+
+    @media #{$small-down} {
+      margin-top: 50px;
+    }
+
+    &--h2 {
+      margin-bottom: -100px;
+    }
+
+    &--video {
+      margin-top: -130px;
+      background: #293438;
+      color: #fff;
+      padding-top: 64px;
+      padding-bottom: 64px;
+
+      @media #{$large-down} {
+      	margin-left: -$gutter;
+        margin-right: -$gutter;
+        padding-left: $gutter;
+        padding-right: $gutter;
+      }
+
+      @media #{$xlarge-up} {
+        background-image: url("../images/bg-dark-line.jpg");
+        background-repeat: repeat-y;
+        background-position: top center;
+      }
+
+      .slider-content {
+        @media #{$xlarge-up} {
+          margin-left: -35px;
+          margin-right: -35px;
+        }
+
+        .slick-slide {
+          @media #{$xlarge-up} {
+            padding: 0 35px;
+          }
+        }
+      }
+
+      .video-preview figcaption {
+        color: #fff;
+      }
+    }
+
+    &--photo {
+      .slider-content {
+        @media #{$xlarge-up} {
+          margin-left: -35px;
+          margin-right: -35px;
+        }
+
+        .slick-slide {
+          @media #{$xlarge-up} {
+            padding: 0 35px;
+          }
+        }
+      }
+    }
+
+    h3 {
+      margin-bottom: 50px;
+
+      @media #{$small-down} {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .front-btn {
+    margin: 70px 0;
+  }
+}

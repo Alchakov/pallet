@@ -1,0 +1,25 @@
+.office-preview {
+  background: #f9fcfd;
+
+  &__info {
+    padding: 20px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 1em;
+  }
+
+  .box-contact {
+    display: block;
+    margin-bottom: 20px;
+
+    &__icon {
+      span {
+        color: $blue;
+      }
+    }
+  }
+}

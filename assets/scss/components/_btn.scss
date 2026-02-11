@@ -1,0 +1,111 @@
+.btn {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: rem(46px);
+  width: auto;
+  margin: 0;
+  padding: 0 20px;
+  outline: none !important;
+  text-align: center;
+  text-decoration: none !important;
+  font-size: 0;
+  border: 0;
+  border-radius: 5px;
+  background: $yellow;
+  backface-visibility: hidden;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.23);
+
+  html.desktop-device & {
+    transition: all 0.23s ease;
+  }
+
+  &:hover {
+    background: $yellow-d;
+  }
+
+  form & {
+    //height: 46PX;
+    //min-width: 212px;
+  }
+
+  &__inner {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 0;
+    color: $main;
+    z-index: 111;
+
+    > * {
+      //display: flex;
+      // align-items: center;
+   
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    form & {
+      font-size: 16PX;
+    }
+  }
+
+  &--no-shadow {
+    box-shadow: none;
+  }
+
+  &--transparent {
+    background: transparent;
+    border: 2px solid $yellow;
+
+    &:hover {
+      background: $yellow;
+    }
+  }
+
+  &--white {
+    background: transparent;
+    border: 2px solid #888e90;
+
+    &:hover {
+      background: #888e90;
+    }
+
+    .btn__text {
+      color: #fff;
+    }
+  }
+
+  &--high {
+    height: 70px;
+
+    .btn__text {
+      line-height: 1.5;
+    }
+  }
+}
+
+button {
+  &.btn {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.button.disabled,
+button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button.disabled:focus, .button.disabled:hover, .button[disabled]:focus, .button[disabled]:hover, button.disabled:focus, button.disabled:hover, button[disabled]:focus, button[disabled]:hover {
+  color: #fff;
+  background-color: #ccc;
+}

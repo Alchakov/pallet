@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "phone": "required",
+    "agreement": "required"
+  },
+  "messages": {
+    "phone": "Заполните поле",
+    "agreement": "Примите соглашение"
+  },
+  "subject": "Заявка",
+  "success": "Ваш запрос отправлен.<br> В скором времени мы с вами свяжемся."
+}

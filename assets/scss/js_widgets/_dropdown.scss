@@ -1,0 +1,77 @@
+.dropdown {
+  position: relative;
+
+  &.contact-dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+
+    > * {
+      padding-right: 20px;
+    }
+
+    &:after {
+      @extend .icomoon;
+
+      content: "\e920";
+      font-size: 6px;
+      color: $blue;
+      position: absolute;
+      right: 0;
+
+      @include center(y);
+    }
+
+    &:empty::after {
+      margin-left: 0;
+    }
+  }
+
+  &.show .dropdown-toggle::after {
+    content: "\e921";
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    padding: 20px;
+    float: left;
+    min-width: 10px;
+    background: #f3f9fc;
+    width: 100%;
+    margin: 10px 0 0;
+    box-shadow: 0px 33px 40px 0px rgba(76, 117, 137, 0.18);
+
+    &:before {
+      content: "";
+      width: 100%;
+      max-width: 100px;
+      height: 1px;
+      background: $blue;
+      position: absolute;
+      top: 0;
+
+      @include center(x);
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .dropdown-menu[x-placement^="top-start"] {}
+
+  .dropdown-menu[x-placement^="top"], .dropdown-menu[x-placement^="right"], .dropdown-menu[x-placement^="bottom"], .dropdown-menu[x-placement^="left"] {
+    right: auto;
+    bottom: auto;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+}

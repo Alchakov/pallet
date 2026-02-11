@@ -1,0 +1,1 @@
+<ul class="clients-list flex-grid-2 flex-grid-md-3">

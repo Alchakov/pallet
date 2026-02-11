@@ -1,0 +1,168 @@
+.b-contacts {
+  position: relative;
+  margin-bottom: 100px;
+  font-size: 0;
+
+  @media #{$small-down} {
+    margin: 20px 0;
+  }
+
+  > * {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    vertical-align: top;
+  }
+
+  &__info {
+    height: 550px;
+    width: 51%;
+    border: 2px solid #9ce0ef;
+    margin-top: 50px;
+
+    @media #{$medium-up} {
+      border-right: 0;
+    }
+
+    @media #{$small-down} {
+      height: auto;
+      width: 100%;
+      margin-top: 0;
+      padding: 50px 0;
+    }
+  }
+
+  &__form {
+    height: 570px;
+    width: 49%;
+    background: #e3f1f6;
+    font-size: 17px;
+    padding: 0 50px;
+
+    @media #{$small-down} {
+      height: auto;
+      width: 100%;
+      margin-top: 25px;
+      padding: 50px 25px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+
+      @media #{$small-down} {
+        display: none;
+      }
+    }
+
+    &:before {
+      width: 60px;
+      height: 2px;
+      background: #9ce0ef;
+    }
+
+    &:after {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 60px 30px 0;
+      border-color: transparent #b6d5e0 transparent transparent;
+    }
+
+    .h3 {
+      margin-bottom: 15px;
+    }
+
+    .form {
+      max-width: 365px;
+      margin: 0 auto;
+
+      &__group {
+        margin-bottom: 14px;
+
+        .form__field {
+          margin-bottom: 14px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    text-align: center;
+    padding-bottom: 33px;
+    margin-bottom: 32px;
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: "";
+      margin: 0 auto;
+      width: 123px;
+      height: 1px;
+      background: #dbdbdb;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    color: #858585;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    font-size: 18px;
+
+    a {
+      color: $blue;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 8px;
+  }
+
+  .box-contact {
+    &--phone {
+      font-size: 25px;
+      margin-bottom: 14px;
+    }
+  }
+
+  .box-social {
+    margin: 43px -12px 0;
+
+    li {
+      padding: 0 12px;
+    }
+
+    .c-social {
+      @include square(45px);
+    }
+  }
+}

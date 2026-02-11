@@ -1,0 +1,74 @@
+table, th, td {
+  border: 0;
+}
+
+.wp-block-table {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+table, th, td {
+  border: 0;
+}
+
+table {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 0 1.4em;
+
+  tr {
+    &:nth-child(odd) {
+      td {
+        background: #effbff;
+      }
+    }
+
+    th {
+      color: $blue;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      padding: 12px;
+    }
+
+    td {
+      padding: 12px;
+    }
+  }
+}
+
+.scroll-table {
+  @media #{$small-down} {
+    overflow-x: scroll;
+  }
+}
+
+.price-table {
+  margin: 3em 0;
+
+  table {
+    tr {
+      td {
+        width: 33.3333%;
+        padding-left: 5%;
+        color: #5b5b5b;
+      }
+
+      &:nth-child(odd) {
+        td:nth-child(2) {
+          background: #e6f6fc;
+        }
+      }
+
+      td:nth-child(2) {
+        background: #f5fafc;
+      }
+
+      td:nth-child(3) {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.map-area {
+  position: relative;
+  width: 100%;
+  height: 550PX;
+  background: #fff;
+
+  @media #{$medium-down} {
+    height: 400PX;
+  }
+
+  > * {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 110;
+  }
+}
+
+.office-baloon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  text-align: left;
+  white-space: normal;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+
+  &__inner {
+    width: 400PX;
+    padding: 20PX;
+    background: #f5fafb;
+    font-size: 0;
+
+    @media #{$small-down} {
+      width: 200PX;
+      padding: 10PX;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      color: $main;
+      margin-top: 10PX;
+      font-size: 15PX;
+      font-family: $montserrat;
+
+     &.office-baloon__title {
+     	margin-top: 0;
+        font-weight: bold;
+        font-size: 18PX;
+      }
+    }
+  }
+
+  &__left,
+  &__right {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__left {
+    width: 60%;
+
+    @media #{$small-down} {
+      width: 90%;
+    }
+  }
+
+  &__right {
+    width: 35%;
+    padding-left: 2%;
+
+    @media #{$small-down} {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    display: block;
+    position: absolute;
+    top: -15PX;
+    left: 200PX;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20PX 15PX 20PX;
+    border-color: transparent transparent #f5fafb transparent;
+    z-index: 9999;
+
+    @media #{$small-down} {
+      left: 90PX;
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 5PX;
+    top: 5PX;
+    font-size: 18PX;
+    color: #000;
+  }
+}

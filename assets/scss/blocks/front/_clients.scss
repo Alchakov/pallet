@@ -1,0 +1,16 @@
+.front-clients {
+  &__inner {
+    padding: 100px 0;
+
+    @media #{$xlarge-up} {
+      background-image: url("../images/bg-line.png");
+      background-repeat: repeat-y;
+      background-position: top center;
+    }
+  }
+
+  .slider-4 {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}

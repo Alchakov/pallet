@@ -1,0 +1,170 @@
+.articles-list {}
+
+.article-preview {
+  $self: &;
+
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  font-size: 0;
+
+  &__inner {
+    position: relative;
+    z-index: 110;
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 111;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(top, rgba(79, 94, 101, 0) 30%, rgba(79, 94, 101, 0.9) 100%);
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: $main;
+
+    &:hover, &:focus {
+      text-decoration: none;
+
+      #{$self}__info {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__info {
+    position: absolute;
+    left: 0;
+    bottom: -2em;
+    z-index: 112;
+    width: 100%;
+    font-size: 16px;
+    padding: 1em;
+    transition: all 0.15s ease;
+
+    #{$self}--strict & {
+      bottom: 0;
+    }
+  }
+
+  &__image {
+    img {
+      backface-visibility: hidden;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 0.5em;
+  }
+
+  &__more {
+    font-size: 0.875em;
+    margin-top: 1.143em;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1;
+  }
+}
+
+.article-relink {
+  $self: &;
+
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  text-decoration: none;
+  float: left;
+
+  @media #{$xsmall-down} {
+    max-width: 100%;
+    float: none !important;
+    margin-bottom: 15px;
+  }
+
+  &--next {
+    float: right;
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+
+    #{$self}__dir {
+      background: $cyan;
+    }
+
+    #{$self}__title, #{$self}__date {
+      color: $cyan;
+    }
+  }
+
+  &__dir {
+    background: $blue;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+    padding: 10px 5px;
+    transition: background 0.23s ease;
+
+    span {
+      display: inline-block;
+      position: relative;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 600;
+      padding: 0 0 0 20px;
+
+      &:before {
+        @extend .icomoon;
+
+        font-size: 15px;
+        content: "\e91d";
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+    }
+
+    &--next {
+      span {
+        padding: 0 20px 0 0;
+
+        &:before {
+          content: "\e91e";
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &__date {
+    color: $blue;
+    padding: 11px 0 6px;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  &__title {
+    color: $main;
+    font-size: 16px;
+  }
+}

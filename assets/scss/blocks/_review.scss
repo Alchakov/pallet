@@ -1,0 +1,150 @@
+.b-reviews {
+  &__nav {
+    margin: 50px 0;
+
+    li {
+      display: inline-block;
+      border-right: 1px solid $blue;
+      padding-right: 20px;
+      margin-right: 20px;
+
+      &:last-child {
+        border-right: 0;
+        padding-right: 0;
+        margin-right: 0;
+      }
+
+      @media #{$small-down} {
+        border-right: 0;
+        padding-right: 0;
+        margin-right: 0;
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      a {
+        display: block;
+        color: $main;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none !important;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        transition: all 0.23s ease;
+
+        &.active {
+          border-bottom-color: $yellow !important;
+        }
+
+        &:hover {
+          border-bottom-color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.reviews-list {
+  li {
+    margin-bottom: 2 * $gutter;
+
+    @media #{$small-down} {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.review-photo {
+  font-size: 0;
+  max-width: 300px;
+  margin: 0 auto;
+
+  &__image {
+  	position: relative;
+    display: inline-block;
+    border: 9px solid #e5f5fb;
+  }
+
+  &__title {
+    color: #515252;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 1em;
+  }
+
+   &__shadow {
+    font-size: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0.58;
+  }
+}
+
+.review-text {
+  position: relative;
+  font-size: 0;
+  background: #f5fafb;
+  padding: 35px 20px 35px 95px;
+  margin-left: 68px;
+  height: 100%;
+  min-height: 180px;
+
+  > * {
+    position: relative;
+    z-index: 111;
+  }
+
+  &:after {
+    @extend .icomoon;
+
+    content: "\e914";
+    position: absolute;
+    bottom: -16px;
+    right: 20px;
+    color: #fff;
+    font-size: 100px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 37px;
+    left: -68px;
+
+    @include square(136px);
+
+    background: #fff;
+    padding: 5px;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 12px 12px 32px 0px rgba(67, 97, 112, 0.07);
+  }
+
+  &__text {
+    color: #5f6161;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  &__title {
+    color: #515252;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 1em 0;
+  }
+
+  &__rating {
+    display: inline-flex;
+    flex-wrap: nowrap;
+
+    > * {
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

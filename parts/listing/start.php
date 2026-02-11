@@ -1,0 +1,1 @@
+<ul class="articles-list flex-grid-1 flex-grid-sm-2">

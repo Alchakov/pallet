@@ -1,0 +1,50 @@
+// breakpoints
+
+$screen: "only screen";
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+$small-up: "#{$screen} and (min-width: 576px)";
+
+// Medium devices (tablets, 768px and up)
+$medium-up: "#{$screen} and (min-width: 768px)";
+
+// Large devices (desktops, 992px and up)
+$large-up:" #{$screen} and (min-width: 992px)";
+
+// Extra large devices (large desktops, 1200px and up)
+$xlarge-up: "#{$screen} and (min-width: 1200px)";
+
+// Extra large devices (large wide desktops, 1500px and up)
+$xxlarge-up: "#{$screen} and (min-width: 1500px)";
+
+
+// Extra small devices (portrait phones, less than 576px)
+$xsmall-down: "#{$screen} and (max-width: 575.98px)";
+
+// Small devices (landscape phones, less than 768px)
+$small-down: "#{$screen} and (max-width: 767.98px)";
+
+// Medium devices (tablets, less than 992px)
+$medium-down: "#{$screen} and (max-width: 991.98px)";
+
+// Large devices (desktops, less than 1200px)
+$large-down: "#{$screen} and (max-width: 1199.98px)";
+
+// Large devices (desktops, less than 1500px)
+$xlarge-down: "#{$screen} and (max-width: 1499.98px)";
+
+
+// Small devices (landscape phones, 576px - 768px)
+$small-only: "#{$screen} and (min-width: 576px) and (max-width: 767.98px)";
+
+// Medium devices (tablets, 768px - 992px)
+$medium-only: "#{$screen} and (min-width: 768px) and (max-width: 991.98px)";
+
+// Large devices (desktops, 992px and up)
+$large-only: "#{$screen} and (min-width: 992px) and (max-width: 1199.98px)";
+
+// Large devices (desktops, 1200px - 1500px)
+$xlarge-only: "#{$screen} and (min-width: 1200px) and (max-width: 1499.98px)";

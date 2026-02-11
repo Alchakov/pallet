@@ -1,0 +1,16 @@
+{
+	"rules": {
+	    "name": "required",
+		"message": "required",
+	    "phone": "required",		
+	    "agreement": "required"
+	},
+	"messages": {
+	    "name": "Заполните поле",
+		"message": "Заполните поле",
+	    "phone": "Заполните поле",		
+	    "agreement": "Примите соглашение"
+	},
+	"subject": "Заявка на расчет",
+	"success": "Ваш запрос отправлен.<br> В скором времени мы с вами свяжемся."
+}

@@ -1,0 +1,112 @@
+.front-content {
+  $self: &;
+
+  padding: 103px 0 67px;
+
+  .container {
+    @media #{$small-down} {
+      padding: 0;
+    }
+  }
+
+  &__inner {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      max-width: 780px;
+      background: #f5fafb;
+
+      @media #{$medium-down} {
+        max-width: 100%;
+      }
+
+      #{$self}--full & {
+        max-width: 100%;
+      }
+    }
+
+    .box-logo {
+      position: absolute;
+      top: 60px;
+      left: 32%;
+      max-width: 24.5%;
+
+      #{$self}--full & {
+        left: auto;
+        right: 48px;
+      }
+
+      @media #{$medium-down} {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    padding: 98px 9px 60px 48px;
+
+    #{$self}--full & {
+      @media #{$large-up} {
+        padding: 98px 48px 60px 48px;
+      }
+    }
+
+    @media #{$medium-down} {
+      padding: 30px;
+    }
+
+    @media #{$small-down} {
+      padding: 35PX 12PX;
+    }
+
+    h1 {
+      @media #{$large-up} {
+        max-width: 50%;
+        margin-bottom: 55px;
+      }
+    }
+
+    .box-benefits__item-image {
+      background: #fff;
+    }
+  }
+
+  &__gallery {
+    background: #d9e6e9;
+    padding: 18px;
+    font-size: 0;
+
+    @media #{$large-up} {
+      margin-top: 127px;
+    }
+
+    figure {
+      position: relative;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      figcaption {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        background: #355a63;
+        background: rgba(53, 90, 99, 0.65);
+        padding: em(12, 20) em(26, 20);
+      }
+    }
+  }
+}

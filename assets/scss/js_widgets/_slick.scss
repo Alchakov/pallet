@@ -1,0 +1,379 @@
+@charset "UTF-8";
+
+// Default Variables
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "←" !default;
+$slick-next-character: "→" !default;
+$slick-dot-character: "•" !default;
+$slick-dot-size: 6PX !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+  @if function-exists(image-url) {
+    @return image-url($url, false, false);
+  }
+  @else {
+    @return url($slick-loader-path + $url);
+  }
+}
+
+@function slick-font-url($url) {
+  @if function-exists(font-url) {
+    @return font-url($url);
+  }
+  @else {
+    @return url($slick-font-path + $url);
+  }
+}
+
+/* Slider */
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-slider.slick-dotted {
+  padding-bottom: 40PX;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+
+  &:focus {
+    outline: none;
+  }
+
+  .slick-loading & {
+    //background: #fff url("../js/lib/slick-1.5.9/slick/ajax-loader.gif") center center no-repeat;
+ 
+  }
+
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+}
+
+.slick-slider .slick-track {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  outline: none !important;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1PX;
+  outline: none !important;
+  font-size: 0;
+
+  > div {
+    width: 100%;
+  }
+
+  [dir="rtl"] & {
+    float: right;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &.slick-loading img {
+    display: none;
+  }
+
+  display: none;
+
+  &.dragging img {
+    pointer-events: none;
+  }
+
+  .slick-initialized & {
+    display: block;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+
+  .slick-vertical & {
+    display: block;
+    height: auto;
+    border: 1PX solid transparent;
+  }
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  width: 14PX;
+  height: 24PX;
+  display: block;
+  background: none;
+  font-size: 0 !important;
+  cursor: pointer;
+  color: transparent;
+  padding: 0;
+  margin: -12PX 0 0;
+  outline: none;
+  overflow: hidden;
+  text-align: center;
+  line-height: 0;
+  opacity: 1;
+  z-index: 10;
+  border: 0;
+  transition: all 0.23s ease 0s;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 21PX;
+    line-height: 1;
+    text-align: center;
+    color: $blue;
+    transition: all 0.15s ease 0s;
+  }
+
+  &:hover {
+    outline: none;
+
+    span {
+      color: $cyan;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.slick-disabled {
+    display: none !important;
+  }
+}
+
+.slick-next {
+  right: 10PX;
+}
+
+.slick-prev {
+  left: 10PX;
+}
+
+.slick-vertical {
+  .slick-next {
+    bottom: -10PX;
+    top: initial;
+
+    @media only screen and (max-width: 920PX) {
+      bottom: 0;
+    }
+  }
+
+  .slick-prev {
+    top: -10PX;
+
+    @media only screen and (max-width: 920PX) {
+      top: 0;
+    }
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0PX;
+  text-align: center;
+  font-size: 0;
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 15PX !important;
+    padding: 0 !important;
+
+    @media only screen and (max-width: 767PX) {
+      margin: 0 5PX !important;
+    }
+
+    &:before {
+      display: none !important;
+    }
+
+    button {
+      position: relative;
+      padding: 0;
+      font-size: 0;
+      outline: none;
+      cursor: pointer;
+      width: 8PX;
+      height: 8PX;
+      margin: 0;
+      border-radius: 50%;
+      background: #d6dcde;
+      border: 0;
+      transition: all 0.1s ease 0s;
+
+      &:hover {
+        background: $main;
+      }
+    }
+
+    &.slick-active {
+      button {
+        background: #00323f;
+      }
+    }
+  }
+}
+
+.slick-slider {
+  margin-bottom: 0;
+}
+
+.slider-content {
+  padding: 0 33PX;
+
+  @media #{$xsmall-down} {
+    padding: 0 20PX;
+  }
+
+  .slick-slide {
+    padding: 0 $gutter;
+
+    @media #{$xsmall-down} {
+      margin: 0 auto;
+      padding: 0 2px;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  &--full {
+    padding: 0;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+
+      @media #{$xsmall-down} {
+        margin-left: -2px;
+        margin-right: -2px;
+      }
+
+    .slick-next {
+      right: $gutter;
+    }
+
+    .slick-prev {
+      left: $gutter;
+    }
+  }
+
+  &--equal-height {
+    &.slick-initialized .slick-track {
+      display: flex;
+
+      .slick-slide {
+        display: flex;
+        height: auto;
+      }
+    }
+  }
+}
+
+.slider-arrow-outside {
+  position: relative;
+  text-align: center;
+  z-index: 110;
+
+  > div {
+    position: relative;
+    display: inline-block;
+    padding: 0 20PX;
+    z-index: 112;
+  }
+
+  .slick-prev,
+  .slick-next {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 6PX;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $blue;
+    &:hover {
+      background:  $blue;
+      span {        
+        color: #fff;
+      }
+    }
+  }
+  .slick-next {
+    text-indent: 1px;
+  }
+}
