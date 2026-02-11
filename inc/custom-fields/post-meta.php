@@ -26,6 +26,12 @@ Container::make('post_meta', 'Настройки' )
 //Review	
 Container::make('post_meta', 'Настройки' )
 	->where( 'post_type', '=', 'review' )
+	 ->add_tab('Бренд', array(
+ Field::make( 'association', 'plt_review_brand', 'Привязка к бренду' )
+ ->set_types(array('brand'))
+ ->set_min(1)
+ ->set_max(1),
+ ))
 	->add_fields(array(
 		Field::make('radio', 'plt_review_type', 'Тип' )->set_options(array('photo' => 'Фото', 'video' => 'Видео', 'text' => 'Текст')),
 		Field::make('text', 'plt_review_video_caption', 'Подпись')
@@ -127,4 +133,11 @@ Container::make( 'post_meta', 'Основная информация' )
 	->add_tab('Галерея', array(
 		Field::make( 'media_gallery', 'plt_brand_gallery', 'Фотогалерея' ),
 	))
+	 ->add_tab('Карта и масштаб', array(
+ Field::make( 'number', 'plt_brand_map_zoom', 'Масштаб карты' )
+ ->set_help_text('Число от 5 (вся Россия) до 18 (улица')
+ ->set_min(5)
+ ->set_max(18)
+ ->set_default_value(15),
+ ))
 ;					
