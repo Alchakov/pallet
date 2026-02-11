@@ -1,0 +1,18 @@
+/******************************************************************
+Theme Name: Pallet
+******************************************************************/
+.sticky {}         
+.gallery-caption {} 
+.bypostauthor {}  
+
+
+
+/* Уменьшение высоты редактора WYSIWYG для Custom Field One */
+#custom_field_one_ifr {
+    height: 100px !important; /* Устанавливаем нужную высоту */
+}
+
+/* Уменьшение высоты редактора WYSIWYG для Custom Field Two */
+#custom_field_two_ifr {
+    height: 100px !important; /* Устанавливаем нужную высоту */
+}

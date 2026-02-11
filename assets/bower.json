@@ -1,0 +1,29 @@
+{
+  "name": "pallet",
+  "description": "site",
+  "main": "gulpfile.js",
+  "version": "0.0.0",
+  "authors": [
+    "Spirit"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fancyBox": "https://github.com/fancyapps/fancyBox.git#^2.1.5",
+    "jquery-placeholder": "https://github.com/mathiasbynens/jquery-placeholder.git#^2.3.1",
+    "jquery-slinky": "https://github.com/alizahid/slinky.git#^4.2.1",
+    "inputmask": "https://github.com/RobinHerbots/Inputmask.git#^4.0.8",
+    "jquery-validation": "https://github.com/jquery-validation/jquery-validation.git#^1.19.1",
+    "blockUI": "https://github.com/malsup/blockui.git",
+    "jQueryFormStyler": "https://github.com/Dimox/jQueryFormStyler.git",
+    "slick-carousel": "https://github.com/kenwheeler/slick.git#^1.8.1",
+    "sticky-kit": "https://github.com/leafo/sticky-kit.git#^1.1.2"
+  }
+}
