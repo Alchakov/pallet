@@ -105,10 +105,8 @@ class PLT_Brand {
 			'show_admin_column' => true,
 			'query_var' => true,
 			'rewrite' => array('slug' => 'proizvoditel'),
-		));
-	}
-
-			// Фильтры (особенности) брендов
+	
+				// Фильтры (особенности) брендов
 		register_taxonomy('brand_feature', 'brand', array(
 			'labels' => array(
 				'name' => 'Фильтры брендов',
@@ -127,6 +125,8 @@ class PLT_Brand {
 			'query_var' => true,
 			'rewrite' => array('slug' => 'brand-feature'),
 		));
+	}));
+	}
 }
 
 new PLT_Brand();
