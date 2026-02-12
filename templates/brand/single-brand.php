@@ -284,21 +284,19 @@ document.body.setAttribute('data-brand-id', <?php echo $brand_id; ?>);
         <!-- Таб: Фильтры -->
  <div id="filters" class="brand-tab-content">
    <h2>Фильтры бренда</h2>
-   <?php
-   $brand_filters = get_the_terms($brand_id, 'brand_feature');
-   if ($brand_filters && !is_wp_error($brand_filters)) :
-   ?>
-     <div class="brand-filters-list">
-       <?php foreach ($brand_filters as $filter) : ?>
-         <div class="brand-filter-item">
-           <label class="brand-filter-checkbox">
-             <input type="checkbox" name="brand_filter_ids[]" value="<?php echo esc_attr($filter->term_id); ?>" checked>
-             <span><?php echo esc_html($filter->name); ?></span>
-           </label>
-         </div>
-       <?php endforeach; ?>
-     </div>
-   <?php else : ?>
+   <?php		<?php
+		$brand_filters = get_the_terms($brand_id, 'brand_feature');
+		if ($brand_filters && !is_wp_error($brand_filters)) :
+		?>
+			<div class="brand-filters-list">
+				<?php foreach ($brand_filters as $filter) : ?>
+					<div class="brand-filter-item">
+						<i class="fas fa-check-circle"></i>
+						<span><?php echo esc_html($filter->name); ?></span>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		<?php else : ?> else : ?>
      <p>Фильтры не определены</p>
    <?php endif; ?>
  </div>
