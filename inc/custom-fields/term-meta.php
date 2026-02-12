@@ -55,3 +55,22 @@ Container::make( 'term_meta', 'Настройки' )
 			->setup_labels(array('plural_name' => 'ничего', 'singular_name' => ''))
 			->set_help_text('Если не заполнено - выводятся общие')
 	));
+
+// Регион - координаты для карты
+Container::make('term_meta', 'Координаты')
+	->where('term_taxonomy', '=', 'region')
+	->add_fields(array(
+		Field::make('text', 'plt_region_lat', 'Широта (latitude)')
+			->set_attribute('placeholder', '55.7558')
+			->set_width(50)
+			->set_help_text('Широта региона для отображения на карте'),
+		Field::make('text', 'plt_region_lng', 'Долгота (longitude)')
+			->set_attribute('placeholder', '37.6173')
+			->set_width(50)
+			->set_help_text('Долгота региона для отображения на карте'),
+		Field::make('text', 'plt_region_zoom', 'Масштаб карты (zoom)')
+			->set_attribute('placeholder', '10')
+			->set_default_value('10')
+			->set_width(50)
+			->set_help_text('Уровень приближения карты при выборе региона (1-18)'),
+	));
