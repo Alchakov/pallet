@@ -198,3 +198,6 @@ function save_custom_product_cat_fields($term_id) {
         update_term_meta($term_id, 'custom_field_two', wp_kses_post($_POST['custom_field_two']));
     }
 }
+
+// ============ RATING & REVIEWS ============
+require_once get_template_directory() . '/inc/rating-functions.php';
