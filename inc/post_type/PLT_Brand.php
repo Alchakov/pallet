@@ -119,7 +119,7 @@ class PLT_Brand {
 				'new_item_name' => 'Название нового фильтра',
 				'menu_name' => 'Фильтры',
 			),
-			'hierarchical' => false,
+			'hierarchical' => true,
 			'show_ui' => true,
 			'show_admin_column' => true,
 			'query_var' => true,
