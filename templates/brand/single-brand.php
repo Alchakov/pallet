@@ -24,10 +24,11 @@ document.body.setAttribute('data-brand-id', <?php echo $brand_id; ?>);
         <div class="brand-single__info">
             <h1><?php the_title(); ?></h1>
             <?php
-            $rating = carbon_get_post_meta($brand_id, 'plt_brand_rating');
-            $reviews_count = carbon_get_post_meta($brand_id, 'plt_brand_reviews_count');
-            if ($rating) :
-                ?>
+		<?php
+		$rating_data = plt_get_brand_rating($brand_id);
+		$rating = $rating_data['average'];
+		$reviews_count = $rating_data['count'];
+		if ($rating) :                ?>
                 <div class="brand-rating">
                     <?php
                     $full_stars = floor($rating);
@@ -213,8 +214,38 @@ document.body.setAttribute('data-brand-id', <?php echo $brand_id; ?>);
         <h2>Отзывы о бренде</h2>
         <!-- Здесь будет форма добавления отзыва и список отзывов -->
         <div class="brand-reviews">
-            <p>Отзывы будут здесь</p>
-        </div>
+		<?php
+		// Получаем данные о рейтинге
+		$rating_data = plt_get_brand_rating($brand_id);
+		
+		// Получаем отзывы
+		$reviews = plt_get_brand_reviews($brand_id);
+		?>
+		
+		<?php if ($rating_data['count'] > 0) : ?>
+			<div class="brand-rating-summary">
+				<div class="rating-overview">
+					<div class="rating-number"><?php echo $rating_data['average']; ?></div>
+					<div class="rating-stars">
+						<?php echo plt_display_rating_stars($rating_data['average'], false); ?>
+					</div>
+					<div class="rating-count">На основе <?php echo $rating_data['count']; ?> отзывов</div>
+				</div>
+			</div>
+		<?php endif; ?>
+		
+		<?php if (!empty($reviews)) : ?>
+			<div class="reviews-list">
+				<?php foreach ($reviews as $review) : ?>
+					<?php
+					$review_type = carbon_get_post_meta($review->ID, 'plt_review_type');
+					get_template_part('parts/loops/loop-review-' . $review_type, null, array('review_id' => $review->ID));
+					?>
+				<?php endforeach; ?>
+			</div>
+		<?php else : ?>
+			<p>Отзывов пока нет. Будьте первым!</p>
+		<?php endif; ?>        </div>
     </div>
 
     <!-- Таб: Контакты -->
