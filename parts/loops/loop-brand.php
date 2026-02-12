@@ -5,9 +5,9 @@
 global $post;
 $brand_id = $post->ID;
 $logo = get_the_post_thumbnail($brand_id, 'medium');
-$rating = carbon_get_post_meta($brand_id, 'plt_brand_rating');
-$reviews_count = carbon_get_post_meta($brand_id, 'plt_brand_reviews_count');
-$address = carbon_get_post_meta($brand_id, 'plt_brand_address');
+$rating_data = plt_get_brand_rating($brand_id);
+$rating = $rating_data['average'];
+$reviews_count = $rating_data['count'];$address = carbon_get_post_meta($brand_id, 'plt_brand_address');
 $city = carbon_get_post_meta($brand_id, 'plt_brand_city');
 $has_price = carbon_get_post_meta($brand_id, 'plt_brand_has_price');
 $region_terms = get_the_terms($brand_id, 'region');
