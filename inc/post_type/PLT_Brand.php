@@ -107,6 +107,26 @@ class PLT_Brand {
 			'rewrite' => array('slug' => 'proizvoditel'),
 		));
 	}
+
+			// Фильтры (особенности) брендов
+		register_taxonomy('brand_feature', 'brand', array(
+			'labels' => array(
+				'name' => 'Фильтры брендов',
+				'singular_name' => 'Фильтр бренда',
+				'search_items' => 'Поиск фильтров',
+				'all_items' => 'Все фильтры',
+				'edit_item' => 'Редактировать фильтр',
+				'update_item' => 'Обновить фильтр',
+				'add_new_item' => 'Добавить новый фильтр',
+				'new_item_name' => 'Название нового фильтра',
+				'menu_name' => 'Фильтры',
+			),
+			'hierarchical' => false,
+			'show_ui' => true,
+			'show_admin_column' => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'brand-feature'),
+		));
 }
 
 new PLT_Brand();
