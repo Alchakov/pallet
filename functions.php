@@ -201,3 +201,4 @@ function save_custom_product_cat_fields($term_id) {
 
 // ============ RATING & REVIEWS ============
 require_once get_template_directory() . '/inc/rating-functions.php';
+require_once get_template_directory() . '/inc/brand-filters-admin.php';
