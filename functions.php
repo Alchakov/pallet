@@ -202,3 +202,15 @@ function save_custom_product_cat_fields($term_id) {
 // ============ RATING & REVIEWS ============
 require_once get_template_directory() . '/inc/rating-functions.php';
 require_once get_template_directory() . '/inc/brand-filters-admin.php';
+
+
+// ------------- FONT AWESOME -------------
+function plt_enqueue_font_awesome() {
+	wp_enqueue_style(
+		'font-awesome',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+		array(),
+		'6.5.1'
+	);
+}
+add_action('wp_enqueue_scripts', 'plt_enqueue_font_awesome');
