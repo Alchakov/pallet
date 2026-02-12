@@ -87,6 +87,7 @@ document.body.setAttribute('data-brand-id', <?php echo $brand_id; ?>);
             <li><a href="#contacts">Контакты</a></li>
             <li><a href="#geography">География</a></li>
             <li><a href="#certificates">Сертификаты</a></li>
+             <li><a href="#filters">Фильтры</a></li>
         </ul>
     </div>
 
@@ -248,6 +249,28 @@ document.body.setAttribute('data-brand-id', <?php echo $brand_id; ?>);
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
+
+        <!-- Таб: Фильтры -->
+ <div id="filters" class="brand-tab-content">
+   <h2>Фильтры бренда</h2>
+   <?php
+   $brand_filters = get_the_terms($brand_id, 'brand_feature');
+   if ($brand_filters && !is_wp_error($brand_filters)) :
+   ?>
+     <div class="brand-filters-list">
+       <?php foreach ($brand_filters as $filter) : ?>
+         <div class="brand-filter-item">
+           <label class="brand-filter-checkbox">
+             <input type="checkbox" name="brand_filter_ids[]" value="<?php echo esc_attr($filter->term_id); ?>" checked>
+             <span><?php echo esc_html($filter->name); ?></span>
+           </label>
+         </div>
+       <?php endforeach; ?>
+     </div>
+   <?php else : ?>
+     <p>Фильтры не определены</p>
+   <?php endif; ?>
+ </div>
     </div>
 
     <!-- Фотогалерея -->
