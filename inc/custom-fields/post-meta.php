@@ -43,9 +43,8 @@ Container::make('post_meta', 'Настройки' )
 			->set_conditional_logic([['field' => 'plt_review_type', 'value' => 'video']]),
 		Field::make('rich_text', 'plt_review_text_content', 'Текст' )
 			->set_conditional_logic([['field' => 'plt_review_type', 'value' => 'text']]),
-		Field::make('radio', 'plt_review_text_star', 'Оценка' )
+		Field::make('radio', 'plt_review_rating', 'Оценка' )
 			->set_options(array('1', '2', '3', '4', '5'))
-			->set_conditional_logic([['field' => 'plt_review_type', 'value' => 'text']])	
 	));	
 	
 	
