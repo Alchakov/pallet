@@ -125,8 +125,6 @@ class PLT_Brand {
 			'query_var' => true,
 			'rewrite' => array('slug' => 'brand-feature'),
 		));
-	}));
 	}
 }
-
 new PLT_Brand();
