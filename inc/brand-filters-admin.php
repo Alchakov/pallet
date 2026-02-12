@@ -4,8 +4,9 @@
  * Provides an admin interface for managing dynamic brand filters
  */
 
-// Add admin menu for brand filters management
-add_action('admin_menu', function() {
+/*REMOVED: // Add admin menu for brand filters management */
+
+/* add_action('admin_menu', function() {
     add_submenu_page(
         'edit.php?post_type=brand',
         'Manage Filters',
@@ -14,7 +15,8 @@ add_action('admin_menu', function() {
         'brand-filters-management',
         'brand_filters_management_page'
     );
-});
+}); */
+
 
 // Admin page callback
 function brand_filters_management_page() {
