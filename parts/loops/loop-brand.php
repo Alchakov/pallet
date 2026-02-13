@@ -44,8 +44,7 @@ $has_price = carbon_get_post_meta($brand_id, 'plt_brand_has_price');
 
                     <!-- Brand Filters (Taxonomies) -->
         <?php
-        $brand_filters = get_the_terms($brand_id, 'brand_filter');
-        if ($brand_filters && !is_wp_error($brand_filters)) :
+        $brand_filters = get_the_terms($brand_id, 'brand_feature');        if ($brand_filters && !is_wp_error($brand_filters)) :
         ?>
             <div class="brand-card__filters">
                 <?php foreach ($brand_filters as $filter) : ?>
