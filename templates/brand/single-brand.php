@@ -46,8 +46,7 @@ document.body.setAttribute('data-brand-id', <?php echo $brand_id; ?>);
 
 			                <!-- Brand Filters (Taxonomies) -->
                 <?php
-                $brand_filters = get_the_terms($brand_id, 'brand_filter');
-                if ($brand_filters && !is_wp_error($brand_filters)) :
+                $brand_filters = get_the_terms($brand_id, 'brand_feature');                if ($brand_filters && !is_wp_error($brand_filters)) :
                 ?>
                     <div class="brand-single__filters">
                         <?php foreach ($brand_filters as $filter) : ?>
