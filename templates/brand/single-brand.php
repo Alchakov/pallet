@@ -43,6 +43,18 @@ document.body.setAttribute('data-brand-id', <?php echo $brand_id; ?>);
                     <span class="rating-text"><?php echo $rating; ?> (<?php echo $reviews_count; ?> отзывов)</span>
                 </div>
             <?php endif; ?>
+
+			                <!-- Brand Filters (Taxonomies) -->
+                <?php
+                $brand_filters = get_the_terms($brand_id, 'brand_filter');
+                if ($brand_filters && !is_wp_error($brand_filters)) :
+                ?>
+                    <div class="brand-single__filters">
+                        <?php foreach ($brand_filters as $filter) : ?>
+                            <span class="brand-filter-badge"><?php echo esc_html($filter->name); ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             
             <div class="brand-contacts">
                 <?php
