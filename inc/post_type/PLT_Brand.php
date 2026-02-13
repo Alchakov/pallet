@@ -126,27 +126,6 @@ class PLT_Brand {
 			'rewrite' => array('slug' => 'brand-feature'),
 		));
 
-		        // Регионы (используем существующую таксономию)
-        register_taxonomy('region', 'brand', array(
-            'labels' => array(
-                'name' => 'Регионы',
-                'singular_name' => 'Регион',
-                'search_items' => 'Поиск регионов',
-                'all_items' => 'Все регионы',
-                'parent_item' => 'Родительский регион',
-                'parent_item_colon' => 'Родительский регион:',
-                'edit_item' => 'Редактировать регион',
-                'update_item' => 'Обновить регион',
-                'add_new_item' => 'Добавить новый регион',
-                'new_item_name' => 'Название нового региона',
-                'menu_name' => 'Регионы',
-            ),
-            'hierarchical' => true,
-            'show_ui' => true,
-            'show_admin_column' => true,
-            'query_var' => true,
-            'rewrite' => array('slug' => 'region'),
-        ));
 
 }}
 new PLT_Brand();
