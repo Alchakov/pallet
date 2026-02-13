@@ -148,5 +148,5 @@ class PLT_Brand {
             'rewrite' => array('slug' => 'region'),
         ));
 
-}
+}}
 new PLT_Brand();
