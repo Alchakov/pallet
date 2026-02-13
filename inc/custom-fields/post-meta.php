@@ -3,6 +3,23 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 use Carbon_Fields\Block;
 
+// Helper function to get taxonomy terms as options
+function plt_get_taxonomy_options($taxonomy) {
+    $terms = get_terms(array(
+        'taxonomy' => $taxonomy,
+        'hide_empty' => false,
+    ));
+    
+    $options = array();
+    if (!is_wp_error($terms)) {
+        foreach ($terms as $term) {
+            $options[$term->term_id] = $term->name;
+        }
+    }
+    
+    return $options;
+}
+
 //Video
 Container::make('post_meta', 'Настройки')
  ->where('post_type', '=', 'video')
@@ -90,6 +107,16 @@ Container::make( 'post_meta', 'Основная информация' )
  Field::make( 'number', 'plt_brand_map_zoom', 'Масштаб карты' )
  ->set_help_text('Число от 5 (вся Россия) до 18 (улица)')
  ->set_default_value(15),
+ ))
+  ->add_tab('Фильтры', array(
+ Field::make( 'multiselect', 'plt_brand_filters', 'Выберите фильтры' )
+ ->set_options( plt_get_taxonomy_options('brand_feature') )
+ ->set_help_text('Выберите фильтры, относящиеся к этому бренду'),
+ ))
+ ->add_tab('Регион', array(
+ Field::make( 'select', 'plt_brand_region', 'Выберите регион' )
+ ->set_options( plt_get_taxonomy_options('region') )
+ ->set_help_text('Выберите регион, к которому относится бренд'),
  ))
  ->add_tab('Рейтинг и отзывы', array(
  Field::make( 'radio', 'plt_brand_rating_source', 'Источник рейтинга' )
